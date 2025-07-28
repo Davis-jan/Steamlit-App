@@ -2,13 +2,4 @@ streamlit
 pandas
 sqlalchemy
 requests
-datetime
-geopy.geocoders
-geopy.distance
-geopy.exc
 geopy
-geopy.location  
-geopy.point
-geopy.units
-geopy.distance.distance
-geopy.distance.great_circle
