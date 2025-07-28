@@ -54,7 +54,10 @@ def fetch_and_store_cached():
     for city in cities:
         lat, lon = get_coordinates(city)
         url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
-        res = requests.get(url).json()
+        res = requests.get(url, timeout=120).json()
+        if "error" in res:
+            st.error(f"Error fetching data for {city}: {res['error']}")
+            continue
         weather = res.get("current_weather", {})
 
         if weather:
